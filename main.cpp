@@ -8,11 +8,23 @@ using namespace std;
 template <class T>
 void read_input(std::vector<T> &vec)
 {
+  T val;
+  while (std::cin >> val)
+  {
+    vec.push_back(val);
+  }
 }
 
 template <class T>
 void print_input(std::vector<T> &vec)
 {
+  T x = vec[vec.size() - 1];
+  vec.pop_back();
+  for (T &c : vec)
+  {
+    cout << c << ", ";
+  }
+  cout << x << "\n";
 }
 
 template <class T>
