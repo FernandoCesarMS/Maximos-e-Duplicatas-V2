@@ -30,6 +30,19 @@ void print_input(std::vector<T> &vec)
 template <class T>
 T get_max(std::vector<T> &vec)
 {
+  if (vec.empty())
+  {
+    std::cout << "Erro: vetor vazio.\n";
+  }
+  T x = vec[0];
+  for (T &c : vec)
+  {
+    if (x < c)
+    {
+      x = c;
+    }
+  }
+  return x;
 }
 
 template <class T>
