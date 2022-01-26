@@ -48,6 +48,31 @@ T get_max(std::vector<T> &vec)
 template <class T>
 unsigned int count_duplicates(std::vector<T> &vec)
 {
+  int duplicates = 0, size = vec.size();
+
+  for (int c = 0; c < size; c++)
+  {
+    bool notFirst = false;
+    for (int c3 = c; c3 >= 0; c3--)
+    {
+      if (c3 != c && vec[c3] == vec[c])
+      {
+        notFirst = true;
+      }
+    }
+    if (notFirst == true)
+    {
+      continue;
+    }
+    for (int c2 = c; c2 < size; c2++)
+    {
+      if (c2 != c && vec[c2] == vec[c])
+      {
+        duplicates++;
+      }
+    }
+  }
+  return duplicates;
 }
 
 template <class T>
